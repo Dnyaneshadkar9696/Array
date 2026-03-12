@@ -39,6 +39,15 @@ public class QuestionsArray {
 		this.duplicateNumber();
 		System.out.println();
 		this.removeDuplicate();
+		System.out.println();
+		this.secondLargest();
+		System.out.println();
+		this.secondSmallest();
+		System.out.println();
+		this.mergArray();
+		System.out.println();
+		this.checkPalindrome();
+	
 		
 	}
 	
@@ -351,6 +360,117 @@ public class QuestionsArray {
 			System.out.println(temp[g]);
 		}
 	}
+
+	//	Write a program to find the second largest element in a 1D array
+	
+	public void secondLargest() {
+		// To find the second largest element in the array
+		
+		int[] arrsec = { 32, 3 ,4, 54, 32, 23, 43, 232, 45, 32};
+		
+		// First to find the largest num
+		int max = arrsec[0];
+		int secondMax = arrsec[0];
+		for( int jk = 0; jk < arrsec.length; jk++) {
+			if(arrsec[jk] > max) {
+				max = arrsec[jk];
+			}
+		}
+		// another for loop for the second largest value
+		for(int sc = 0 ; sc < arrsec.length ; sc++) {
+			if(arrsec[sc] > secondMax && arrsec[sc] < max) {
+				secondMax = arrsec[sc];
+			}
+		}
+		
+		System.out.println("Second Max : "+ secondMax);
+		
+	}
+	
+//	Write a program to find the second smallest element in a 1D array.
+	
+	public void secondSmallest() {
+		
+		int[] secSmall = { 32, 45, 56, 34, 65, 37};
+		int min = secSmall[0];
+		int secondMin = secSmall[1];
+		// we initialize with the second element because the first element can be small 
+		
+		for(int mi = 0 ; mi< secSmall.length ; mi ++) {
+			if(secSmall[mi] < min) {
+				min = secSmall[mi];
+//				 we got the second smallest number 
+				
+			}
+		}
+		// now another for loop for second smallest number 
+		
+		for(int se = 0 ; se < secSmall.length; se++) {
+			
+			 if (secSmall[se] > min && secSmall[se] < secondMin) {
+		            secondMin = secSmall[se];
+		        }
+		}
+		
+		System.out.println( "Second Min : "+ secondMin);
+		
+		
+	}
+	
+//	 Write a program to merge two 1D arrays.
+	
+	public void mergArray() {
+		int[] arrO =  { 23, 23, 56, 78, 45, 76, 45};
+		int[] arrS = { 4, 49, 4, 54};
+		int[] arrCom = new int[11];
+	
+		// we have to store the elements in the new array
+		
+		
+			for(int o = 0; o < arrO.length; o++)
+			{
+				arrCom[o]= arrO[o];
+			}
+			for(int h = 0; h< arrS.length; h++) {
+				arrCom[arrO.length + h] = arrS[h];
+				// the value need to be stored after the first array
+			}
+			// print last array
+			for(int y = 0 ; y < arrCom.length; y++) {
+				System.out.println(arrCom[y]);
+			}
+		
+		
+		
+	}
+	
+	// check weather the array is palindrome or not 
+	
+	public void checkPalindrome() {
+		int[] palin = { 1, 2, 67, 1};
+		int[] check = new int[palin.length];
+		int j = 0;
+		for(int i = palin.length -1 ; i >=0 ; i--) {
+			check[j] = palin[i];
+			j++;
+		}
+		
+		boolean isPalindrome = true;
+
+	    for(int i = 0; i < palin.length; i++) {
+	        if(palin[i] != check[i]) {
+	            isPalindrome = false;
+	            break;
+	        }
+	    }
+
+	    if(isPalindrome) {
+	        System.out.println("The array is palindrome");
+	    } else {
+	        System.out.println("The array is not palindrome");
+	    }
+	}
+	
 	
 	
 	
@@ -360,3 +480,4 @@ public class QuestionsArray {
 	
 
 }
+
