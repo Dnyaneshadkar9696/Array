@@ -2,7 +2,7 @@ package arraypractise;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-public class QuestionsArray {
+public class QuestionsArray extends TwoDArray{
 	
 	// method for calling all the methods 
 	
@@ -480,4 +480,5 @@ public class QuestionsArray {
 	
 
 }
+
 
